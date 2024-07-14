@@ -1,0 +1,511 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<AlteryxDocument yxmdVer="2019.2">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="0">_externals\1\womens_world_cup_data.txt</File>
+          <FormatSpecificOptions>
+            <CodePage>28591</CodePage>
+            <Delimeter>\t</Delimeter>
+            <IgnoreErrors>False</IgnoreErrors>
+            <FieldLen>254</FieldLen>
+            <AllowShareWrite>False</AllowShareWrite>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <ImportLine>1</ImportLine>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>womens_world_cup_data.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Team_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Team_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="date" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="162" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="score_i" selected="True" type="Int16" size="2" />
+            <SelectField field="score_j" selected="True" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Team_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Team_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_i" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="score_j" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="date" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="414" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [score_i]&gt; [score_j] then &quot;i&quot; else &quot;j&quot; endif" field="Winner" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Winner = if [score_i]> [score_j] then "i" else "j" endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Team_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Team_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_i" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="score_j" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="date" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Winner" size="1073741823" source="Formula: if [score_i]&gt; [score_j] then &quot;i&quot; else &quot;j&quot; endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="258" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[score_i]= [score_j]</Expression>
+          <Mode>Custom</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>
+            </Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2019-06-24 10:14:09</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2019-06-24 10:14:09</StartDate>
+              <EndDate>2019-06-24 10:14:09</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[score_i]= [score_j]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Team_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Team_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_i" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="score_j" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="date" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Team_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Team_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_i" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="score_j" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="date" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="606" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="RecordID" />
+          </KeyFields>
+          <DataFields>
+            <Field field="RecordID" selected="False" />
+            <Field field="Team_i" selected="True" />
+            <Field field="Team_j" selected="True" />
+            <Field field="home_i" selected="False" />
+            <Field field="home_j" selected="False" />
+            <Field field="score_i" selected="False" />
+            <Field field="score_j" selected="False" />
+            <Field field="date" selected="False" />
+            <Field field="Winner" selected="False" />
+            <Field field="*Unknown" selected="False" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Name" size="6" source="Transpose:" type="String" />
+            <Field name="Value" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="510" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Team_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Team_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_i" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="home_j" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="score_i" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="score_j" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="Int16" />
+            <Field name="date" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Winner" size="1073741823" source="Formula: if [score_i]&gt; [score_j] then &quot;i&quot; else &quot;j&quot; endif" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="702" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Right([Name], 1)" field="Name" size="6" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Name = Right([Name], 1)
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Name" size="6" source="Formula: Right([Name], 1)" type="String" />
+            <Field name="Value" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="798" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="RecordID" />
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+            <Field field="Winner" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Team_i" selected="False" input="Right_" />
+                <SelectField field="Right_Team_j" selected="False" input="Right_" />
+                <SelectField field="Right_home_i" selected="False" input="Right_" />
+                <SelectField field="Right_home_j" selected="False" input="Right_" />
+                <SelectField field="Right_score_i" selected="False" input="Right_" />
+                <SelectField field="Right_score_j" selected="False" input="Right_" />
+                <SelectField field="Right_date" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Name" size="6" source="Formula: Right([Name], 1)" type="String" />
+            <Field name="Value" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+            <Field field="Name" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Name" size="6" source="Formula: Right([Name], 1)" type="String" />
+            <Field name="Value" size="254" source="File: C:\Users\cbonthius\Downloads\womens-world-cup\womens_world_cup_data.txt" type="V_String" />
+            <Field name="Winner" size="1073741823" source="Formula: if [score_i]&gt; [score_j] then &quot;i&quot; else &quot;j&quot; endif" type="V_WString" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+            <Field field="Name" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Winner" size="1073741823" source="Formula: if [score_i]&gt; [score_j] then &quot;i&quot; else &quot;j&quot; endif" type="V_WString" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+            <Field field="Winner" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="894" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Value" action="GroupBy" rename="Value" />
+            <SummarizeField field="Value" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Value" size="254" source="Summarize: GroupBy - Value" type="V_String" />
+            <Field name="Count" source="Summarize: Count - Value" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Value" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="978" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Count - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Value" size="254" source="Summarize: GroupBy - Value" type="V_String" />
+            <Field name="Count" source="Summarize: Count - Value" type="Int64" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1074" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Value" size="254" source="Summarize: GroupBy - Value" type="V_String" />
+            <Field name="Count" source="Summarize: Count - Value" type="Int64" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="9" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Join" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>challenge_169_solution</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
